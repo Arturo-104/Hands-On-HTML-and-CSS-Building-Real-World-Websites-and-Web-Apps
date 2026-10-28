@@ -15,13 +15,16 @@ html {
 
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #0b0f19;
     color: #e2e8f0;
     line-height: 1.6;
-    /* TRUCO DE ORO: Altura mínima 100vh y flexbox para empujar el footer abajo */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #0b0f19;
+    /* Foto desampliada un 50% y centrada abajo para que se vea el grupo entero con sus caras */
+    background: linear-gradient(rgba(11, 15, 25, 0.15), rgba(11, 15, 25, 0.4)),
+        url('../images/5870830800687796162.jpg') center bottom / max(550px, 50%) auto no-repeat fixed;
+    background-color: #0b0f19;
 }
 
 /* ============================================================== */
@@ -33,8 +36,13 @@ body {
     display: flex;
     max-width: 1200px;
     width: 100%;
-    margin: 20px auto 40px auto;
+
+    /* margin: 20px auto 40px auto; */
     /* 20px porque el widget de la API ya absorbe los 90px del menú */
+
+    margin: 90px auto 40px auto;
+    /* 90px arriba para no ser tapado por el menú fixed */
+
     padding: 0 20px;
     gap: 30px;
 }
@@ -46,13 +54,14 @@ body {
     /* Previene desbordamiento en flexbox */
 }
 
-/* Placeholder inicial para los equipos */
+/* Paneles semitransparentes elegantes sin emborronar a las personas */
 .panel-placeholder {
-    background: #161f30;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
     padding: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .panel-placeholder h2 {
@@ -72,24 +81,93 @@ body {
 
 /* ============================================================== */
 /* ZONA EQUIPO 1: HEADER / MENÚ SUPERIOR                          */
-/* Todo el CSS del Equipo 1 debe comenzar con #equipo-header      */
 /* ============================================================== */
 #equipo-header {
     position: fixed;
-    /* Fijo en la pantalla durante el scroll */
+
+    /* Fijo: se congela en la pantalla durante el scroll */
     top: 0;
     left: 0;
     width: 100%;
-    /* 100% de ancho */
+    /* Ocupa todo el ancho */
+
     height: 70px;
+    /* Altura fija de la barra */
     background: rgba(15, 23, 42, 0.85);
+    /* Fondo oscuro semitransparente */
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+
+    /* Efecto cristal esmerilado (Glassmorphism) */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
-    /* Máxima prioridad de capa */
+    /* ¡TRUCO CLAVE! Máxima prioridad para que nada lo tape */
+
     display: flex;
     align-items: center;
     padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#equipo-header .nav-contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* Logo a la izquierda, enlaces a la derecha */
+    align-items: center;
+}
+
+#equipo-header .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+#equipo-header .icono-cohete {
+    font-size: 1.4rem;
+}
+
+#equipo-header .nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+#equipo-header .nav-menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+/* Efecto al pasar el ratón */
+#equipo-header .nav-menu a:hover {
+    color: #ffffff;
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Botón destacado */
+#equipo-header .btn-contacto {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+#equipo-header .btn-contacto:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
 }
 
 #equipo-header .navbar-demo {

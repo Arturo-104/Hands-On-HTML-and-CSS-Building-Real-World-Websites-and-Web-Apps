@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clase 2026 - Proyecto Web Colaborativo UFV</title>
-    
+
     <!-- Fuentes modernas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Hoja de estilos compartida -->
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
 
-    <!-- ============================================================== -->
-    <!-- EQUIPO 1: HEADER / MENÚ SUPERIOR (POSICIÓN FIJA POR SCROLL)    -->
-    <!-- REGLA: Sólo los alumnos del Equipo 1 tocan dentro de este tag  -->
-    <!-- ============================================================== -->
     <header id="equipo-header" class="seccion-equipo-1">
         <nav class="navbar-demo">
             <span class="logo">🚀 Clase 2026</span>
@@ -34,11 +32,27 @@
         </nav>
     </header>
 
+    <div class="nav-contenedor">
+        <a href="#inicio" class="nav-logo">
+            <span class="icono-cohete">🚀</span>
+            <span class="texto-logo">Clase 2026 UFV</span>
+        </a>
+
+        <ul class="nav-menu">
+            <li><a href="#inicio" class="enlace-activo">Inicio</a></li>
+            <li><a href="#equipo-izquierda">Sugerencias</a></li>
+            <li><a href="#equipo-derecha">Multimedia</a></li>
+            <li><a href="#equipo-footer" class="btn-contacto">Contacto</a></li>
+        </ul>
+    </div>
+    </header>
 
     <!-- ============================================================== -->
     <!-- CONTENIDO CENTRAL: ESTRUCTURA DE 2 COLUMNAS (FLEXBOX)         -->
     <!-- ============================================================== -->
     <main class="contenedor-principal" id="inicio">
+
+
 
         <!-- ========================================================== -->
         <!-- EQUIPO 4: COLUMNA IZQUIERDA (ASPECTOS A MEJORAR / BUZÓN)   -->
@@ -47,7 +61,8 @@
         <section id="equipo-izquierda" class="columna columna-izq seccion-equipo-4">
             <div class="panel-placeholder">
                 <h2>💡 Aspectos a Mejorar de la Clase</h2>
-                <p>Espacio asignado al <strong>Equipo 4</strong> para redactar propuestas, ideas de mejora para la clase o un buzón interactivo.</p>
+                <p>Espacio asignado al <strong>Equipo 4</strong> para redactar propuestas, ideas de mejora para la clase
+                    o un buzón interactivo.</p>
                 <div class="aviso-equipo">Equipo 4: ¡Sustituid este contenido por vuestro diseño!</div>
             </div>
         </section>
@@ -60,8 +75,9 @@
         <section id="equipo-derecha" class="columna columna-der seccion-equipo-3">
             <div class="panel-placeholder">
                 <h2>📸 Galería y Música de Clase</h2>
-                <p>Espacio asignado al <strong>Equipo 3</strong> para colocar una fotografía con estilos y el reproductor de música con control JavaScript.</p>
-                
+                <p>Espacio asignado al <strong>Equipo 3</strong> para colocar una fotografía con estilos y el
+                    reproductor de música con control JavaScript.</p>
+
                 <!-- Reproductor inicial de partida -->
                 <div class="caja-reproductor-inicial">
                     <audio id="cancion-clase" loop>
@@ -84,12 +100,15 @@
     <!-- ============================================================== -->
     <footer id="equipo-footer" class="seccion-equipo-2">
         <div class="footer-contenido">
-            <p class="creditos">© 2026 Universidad Francisco de Vitoria — Master en Business Analytics, IA y Big Data</p>
-            <p class="equipo-nombres">Espacio asignado al <strong>Equipo 2</strong> para maquetar el pie de página completo al 100%.</p>
+            <p class="creditos">© 2026 Universidad Francisco de Vitoria — Master en Business Analytics, IA y Big Data
+            </p>
+            <p class="equipo-nombres">Espacio asignado al <strong>Equipo 2</strong> para maquetar el pie de página
+                completo al 100%.</p>
         </div>
     </footer>
 
     <!-- Script JavaScript para controlar el reproductor de música -->
     <script src="scripts/musica.js"></script>
 </body>
+
 </html>
