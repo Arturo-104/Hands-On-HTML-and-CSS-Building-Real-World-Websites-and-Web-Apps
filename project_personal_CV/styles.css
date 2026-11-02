@@ -1,81 +1,223 @@
-/* Basic reset for consistent styling */
+/* Ajustes generales */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    /* Using Arial font for simplicity */
-    line-height: 1.6;
-    /* Spacing between lines */
+    margin: 0;
+    padding: 40px 20px 90px;
+    background: #edf1f5;
+    color: #273444;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
 }
 
-#cv {
-    max-width: 800px;
-    /* CV width */
-    margin: 20px auto;
-    /* Center the CV on the page */
-    padding: 20px;
-    border: 1px solid #ddd;
-    /* Border around the CV */
+.cv {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(22, 44, 68, 0.12);
 }
 
-header {
-    text-align: center;
+/* Columna lateral */
+.lateral {
+    padding: 45px 28px;
+    background: #17344d;
+    color: #f3f7fb;
+}
+
+.iniciales {
+    display: grid;
+    place-items: center;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 45px;
+    border: 2px solid #80c8db;
+    border-radius: 50%;
+    font-size: 32px;
+    font-weight: bold;
+    color: #b8e7f2;
+}
+
+.lateral h2 {
+    margin-top: 32px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #496276;
+    font-size: 17px;
+    color: white;
+}
+
+.lateral p,
+.lateral li {
+    font-size: 14px;
+}
+
+.lateral a {
+    color: #c1ebf5;
+    overflow-wrap: anywhere;
+}
+
+.lateral ul {
+    padding-left: 18px;
+}
+
+.lateral li {
+    margin-bottom: 12px;
+}
+
+/* Contenido principal */
+.contenido {
+    min-width: 0;
+    padding: 45px 50px;
+}
+
+/* Relative sirve como referencia para la insignia */
+.cabecera {
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid #21809c;
+}
+
+/* Absolute coloca la insignia dentro de la cabecera */
+.insignia {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 5px 12px;
+    background: #e6f2f6;
+    color: #175c73;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 0 0 15px;
+    color: #17344d;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.subtitulo {
+    margin: 0;
+    color: #526779;
+    font-size: 17px;
+}
+
+section {
+    margin-top: 35px;
+}
+
+.contenido h2 {
     margin-bottom: 20px;
-    /* Space below the header */
+    color: #17657e;
+    font-size: 22px;
 }
 
-header h1 {
-    color: #333;
-    /* Dark text color for the name */
-    margin-bottom: 5px;
-    /* Small spacing below the name */
+h3 {
+    margin: 0;
+    color: #17344d;
+    font-size: 17px;
 }
 
-header p {
-    color: #666;
-    /* Lighter text color for the title */
+.puesto {
+    margin-bottom: 25px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e3e9ef;
 }
 
-/* Styling for each section's title */
-h2 {
-    background-color: #f4f4f4;
-    /* Light gray background */
-    padding: 10px;
-    margin-bottom: 15px;
-    /* Space below the title */
+.cargo {
+    margin: 5px 0;
+    font-weight: bold;
 }
 
-/* Styling for the contact information */
-#contact address p {
-    margin-bottom: 10px;
-    /* Space between each piece of contact info */
+.fecha {
+    margin: 5px 0 12px;
+    color: #607080;
+    font-size: 13px;
 }
 
-/* Styling for the skills list */
-#skills ul {
-    list-style-type: none;
-    /* Remove the default bullet points */
+.contenido ul {
+    padding-left: 20px;
 }
 
-#skills li {
-    background-color: #f9f9f9;
-    /* Lighter gray background */
-    padding: 5px;
-    margin-bottom: 5px;
-    /* Space between each skill */
+.contenido li {
+    margin-bottom: 8px;
 }
 
-/* Styling for each work experience */
-#experience article {
-    margin-bottom: 15px;
-    /* Space between each work experience */
+.estudio {
+    margin-bottom: 23px;
+    padding-left: 16px;
+    border-left: 3px solid #80c8db;
 }
 
-#experience h3 {
-    margin-bottom: 5px;
-    /* Space below the job title */
+.estudio p {
+    margin: 4px 0;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e3e9ef;
+    color: #607080;
+    font-size: 12px;
+}
+
+/* Fixed mantiene el botón visible al desplazarse */
+/* Z-index lo coloca por delante del resto del contenido */
+.volver-arriba {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 10;
+    padding: 10px 18px;
+    border-radius: 25px;
+    background: #17344d;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.volver-arriba:hover {
+    background: #216c86;
+}
+
+a:focus-visible {
+    outline: 3px solid #e9a23b;
+    outline-offset: 4px;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 760px) {
+    body {
+        padding: 15px 10px 85px;
+    }
+
+    .cv {
+        grid-template-columns: 1fr;
+    }
+
+    .lateral,
+    .contenido {
+        padding: 30px 24px;
+    }
+
+    .iniciales {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
 }
